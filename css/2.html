@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /* css4 有什么stylus 不能做的呢？ */
+  /* web component vue/react  */
+  .box {
+    --base-size: 10;
+    width: calc(var(--base-size)*10px);/*90%宽度给 不够精细 rem  html fontSize css少数函数*/
+    height: calc(var(--base-size)*5px);
+    padding: calc(var(--base-size)*1px);
+    background-color: red;
+  }
+  /* 移动端时， 讲盒子变小， 为原来的0.8倍 */
+  /* 媒体查询没讲过？ */
+  @media screen and (max-width: 400px) {
+    .box {
+      background-color:lightblue;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="box">
+  </div>
+  <script>
+  // 360  风格， 比较底层， 偏的css 新旧技能好喜欢考
+  // stylus css 编译封闭系统  
+  // 优势  js 还可以操作变量 
+  setTimeout(() => {
+    document
+      .querySelector('.box')
+      .style
+      .setProperty('--base-size', 20)
+  }, 1000)
+  </script>
+</body>
+</html>
