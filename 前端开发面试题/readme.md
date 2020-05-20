@@ -32,13 +32,13 @@ JS引擎： 解析和执行JavaScript来实现网页的动态效果
 ```
 - html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和 HTML5？
 ```
-HTML5现在已经不是SGML的子集， 主要是关于图像， 位置， 存储， 多任务等功能的增加
-  绘画canvas；
-  用于媒介回放的video和audio元素；
-  本地离线存储localstorage长期存储数据， 浏览器关闭后数据不丢失； sessionStorage的数据在浏览器关闭后自动删除；
-  语意化更好的内容元素，比如 article、footer、header、nav、section;
-  表单控件，calendar、date、time、email、url、search;
-  新的技术webworker, websocket, Geolocation;
+* HTML5现在已经不是SGML的子集， 主要是关于图像， 位置， 存储， 多任务等功能的增加
+    绘画canvas；
+    用于媒介回放的video和audio元素；
+    本地离线存储localstorage长期存储数据， 浏览器关闭后数据不丢失； sessionStorage的数据在浏览器关闭后自动删除；
+    语意化更好的内容元素，比如 article、footer、header、nav、section;
+    表单控件，calendar、date、time、email、url、search;
+    新的技术webworker, websocket, Geolocation;
 移除的元素：
   	  纯表现的元素：basefont，big，center，font, s，strike，tt，u;
   	  对可用性产生负面影响的元素：frame，frameset，noframes；
@@ -46,4 +46,47 @@ HTML5现在已经不是SGML的子集， 主要是关于图像， 位置， 存�
   	 IE8/IE7/IE6支持通过document.createElement方法产生的标签，
     	 可以利用这一特性让这些浏览器支持HTML5新标签，
     	 浏览器支持新标签后，还需要添加标签默认的样式。
+```
+- 简述一下你对HTML语义化的理解？
+```
+用正确的标签做正确的事情。
+html语义化让页面的内容结构化， 解构更清晰， 便于对浏览器， 搜索引擎解析；
+即使在没有样式CSS情况下也以一种文档格式显示， 并且是容易阅读的；
+搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于seo；
+使阅读源代码的人对网站更容易将网站分块， 便于阅读维护理解。
+```
+
+- 请描述一下cookie， sessionStorage和localStorage的区别？
+```
+cookie用于状态管理，但是只要4kb容量大小， 并且存在安全性和性能问题
+sessionStorage用于表单提交数据， 大小有5MB， 但是浏览器关闭数据随之消失
+localStorage大小也有5MB， 但是是永久性数据， 可以用于存储一些大型图片之类的数据
+```
+- iframe有哪些缺点？
+```
+* iframe会阻塞主页面的Onload事件；
+* 搜索引擎的检索程序无法解读这种页面， 不利于SEO
+* iframe和主页面共享连接池， 而浏览器对相同域的连接有限制， 所以会影响页面的并行加载
+使用iframe之前需要考虑这两个缺点。 如果需要使用iframe， 最好是通过javascript动态给iframe添加src属性值
+```
+
+- Label的作用是什么？ 是怎么用的？
+```
+label标签来定义表单控制间的关系， 当用户选择该标签时， 浏览器会自动将焦点转到和标签相关的表单控件上。
+```
+
+- HTML5的form如何关闭自动完成功能
+```
+给不想要提示的form或者某个input设置为autocomplete=off
+```
+- 如何实现浏览器内多个标签页之间的通信？
+```
+WebSocker, ShareWorker;
+也可以调用localStorage， cookies等本地存储方式；
+localStorage另一个浏览上下文里被添加， 修改或者删除时， 他都会触发一个事件，
+我们通过监听事件， 控制它的值来进行页面信息通信
+```
+- webSocker如何兼容低浏览器？
+```
+XHR
 ```

@@ -60,3 +60,22 @@ function Fooo() {
   this.a = 123
 }
 let bbbb = new Fooo()
+
+
+// console.log(+true)
+
+// let a;
+// a = {}
+// console.log(a)
+
+
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
+const lydia = new Person("Lydia", "Hallie");
+const sarah = Person("Sarah", "Smith");
+
+console.log(lydia);
+console.log(sarah);
