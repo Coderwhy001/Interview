@@ -24,3 +24,5 @@ let x;
 console.log(x)
 
 setInterval(() => console.log("Hi"), 1000);
+
+
