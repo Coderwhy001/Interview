@@ -15,7 +15,11 @@
 
 Object.defineProperty(window, 'a', {
   get () {
-    return window.a += 1
+    if (this.value) {
+      return this.value += 1
+    } else {
+      return this.value = 1
+    }
   }
 })
 if (a == 1 && a == 2 && a == 3) {
