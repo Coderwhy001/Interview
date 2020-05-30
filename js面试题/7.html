@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  // 观察者模式
+  function defineReactive(target, key, value) {
+    observer(value);
+    Object.defineProperty(target, key, {
+      get() {
+        return value;
+      },
+      set(newValue) {
+        observer(value); // 
+        if (newValue !== value) {
+          value = newValue
+          updateView(); // 更新视图
+        }
+      }
+    })
+  }
+
+
+  function updateView() {
+    console.log('试图更新');
+  }
+
+
+  // MVVM  defineProperty  get set 能力  元编程
+  function observer(target) {
+    // 
+    if (typeof target  !== 'object' || target === null) {
+      return target;
+    }
+
+
+    // push -> 改写原型也可以
+    // if (target.constructor == )
+    if (Array.isArray(target)) { //数组
+      target.__proto__ = arrProto;
+    } 
+
+
+    for (let key in target) {
+      defineReactive(target, key, target[key])
+    }
+  }
+  const oldArrayProperty = Array.prototype; // 
+  // 截胡
+  const arrProto = Object.create(oldArrayProperty);
+  ["push", "pop", "shift", "unshift", "spluce"].forEach(methodName => {
+    arrProto[methodName] = function() {
+      updateView();
+      oldArrayProperty[methodName].call(this, ...arguments);
+    }
+  })
+
+
+  const data = {
+    name: '刘子民',
+    info: {
+      address: '北京'
+    },
+    nums: [10, 20, 30]
+  }
+  observer(data);
+  // data.name = '潘帅'
+  // data.info.address = '深圳';
+  // data.nums[0] = 11; //不需要响应
+  // vue 框架满足开发者的需求
+  data.nums.push(40); // 请支持
+
+
+
+  </script>
+</body>
+</html>
