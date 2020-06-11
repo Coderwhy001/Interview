@@ -21,3 +21,10 @@ const person = "Lydia";
 const age = 21;
 
 getPersonInfo`${person} is ${age} years old`;
+
+
+function getAge(...args) {
+  console.log(args);
+}
+
+getAge(["Lydia"]);
