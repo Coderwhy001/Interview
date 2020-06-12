@@ -3,7 +3,7 @@ const obj = {
   skill: ['es6', 'react', 'angular'],
   say: function () {
       for (var i = 0, len = this.skill.length; i < len; i++) {
-          setTimeout(function() {
+          setTimeout(() => {
               console.log(this)
               console.log('N0.' + parseInt(i+1) + this.name);
               console.log(this.skill[i]);
