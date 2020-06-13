@@ -40,7 +40,7 @@
     console.log(isArrayType(a))
     console.log(isArrayType(b))  // 'Array' b => isType
 
-
+    a.bind()
     Function.prototype.myBind = function(thisObj, ...arg1) {
       // 1
       // 谁调用 bind，最终拼好的参数传给谁
@@ -50,7 +50,7 @@
         const args = arg1.concat(arg2);
         // 调用了，考虑 this
         // fn 调用完了 有 结果返回，
-        return fn.apply(thisObj, ...args);
+        return fn.call(thisObj, ...args);
       }
       return foo
     }
