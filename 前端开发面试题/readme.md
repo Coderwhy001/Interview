@@ -58,7 +58,7 @@ html语义化让页面的内容结构化， 解构更清晰， 便于对浏览�
 
 - 请描述一下cookie， sessionStorage和localStorage的区别？
 ```
-cookie用于状态管理，但是只要4kb容量大小， 并且存在安全性和性能问题
+cookie用于状态管理，但是只有4kb容量大小， 并且存在安全性和性能问题
 sessionStorage用于表单提交数据， 大小有5MB， 但是浏览器关闭数据随之消失
 localStorage大小也有5MB， 但是是永久性数据， 可以用于存储一些大型图片之类的数据
 ```

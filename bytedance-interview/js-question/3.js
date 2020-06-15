@@ -16,8 +16,8 @@
 //     console.log(i)
 //   }, 0);
 // }
-// function foo (a) {
-//   console.log(b)
-// }
-// foo(2)
-// var b = 2;
+function foo (a) {
+  console.log(b)
+}
+var b = 2;
+foo(2)
