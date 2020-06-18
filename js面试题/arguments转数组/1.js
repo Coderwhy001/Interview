@@ -9,3 +9,13 @@ function sum(a, b) {
   console.log(args.reduce((sum, cur) => sum + cur));//args可以调用数组原生的方法啦
 }
 sum(1, 2);//3
+
+let obj = {
+  0: 'nihao',
+  1: 'haha',
+  2: 'gansha',
+  'length': 3
+}
+
+let A = Array.prototype.slice.call(obj)
+console.log(A)

@@ -5,13 +5,13 @@ function selectSort(arr) {
       if (arr[min] > arr[j]) { 
         min = j
       }
+    }
+    if (min !== i) {
+      let temp = arr[min]
+      arr[min] = arr[i]
+      arr[i] = temp
+    }
   }
-  if (min !== i) {
-    let temp = arr[min]
-    arr[min] = arr[i]
-    arr[i] = temp
-  }
-}
   return arr
 }
 

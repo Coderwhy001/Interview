@@ -20,11 +20,11 @@ function throttle(fn) {
   let flag = true
   return function() {
     if (!flag) return;
-    flag = false
+    flag = false;
     setTimeout(() => {
-      fn.apply(this, arguments)
+      fn.call(this, arguments)
       flag = true
-    }, 500)
+    }, 1000)
   }
 }
 function sayHi(e) {
