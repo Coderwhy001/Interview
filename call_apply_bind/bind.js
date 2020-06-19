@@ -5,8 +5,6 @@ Function.prototype.myBind = function(objThis, ...params) { // 先传一部分参
     const context = isNew ? this : Object(objThis) ; // this 覆盖为上下文对象
     return thisFn.call(context, ...params, ...secondParams); // 
   }
-
-
   if (thisFn.prototype) {
     fToBind.prototype = Object.create(thisFn.prototype);
   }

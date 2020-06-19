@@ -46,7 +46,7 @@ Cache-Control:max-age=3600
 
 如果请求头中的这个时间小于最后修改时间，说明需要更新，返回新的资源
 否则返回 304(不会返回资源内容)，告诉浏览器内容没有修改，可以直接使用内存
-Etag / If-None-Match
+## Etag / If-None-Match
 与 Last-Modified/If-Modified-Since 不同的是，Etag/If-None-Match 返回的是一个校验码
 Etag 是服务器根据当前文件的内容，给文件生成的唯一标识，只要里面的内容有改动，这个值就会变化
 浏览器接收到 Etag 的值，会在下次请求时，将这个值作为 If-None-Match 这个字段的内容，并放在请求头中发送给服务器
