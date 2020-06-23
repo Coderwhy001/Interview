@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, html{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .left, .right{
+      position: absolute;
+      background: red;
+      top: 0;
+      width: 100px;
+      height: 100%;
+    }
+    .left {
+      left: 0;
+    }
+    .right {
+      right: 0;
+    }
+    .main {
+      margin: 0 100px 0 100px;
+      background: blue;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">Left</div>
+  <div class="main">Main</div>
+  <div class="right">Right</div>
+</body>
+</html>
