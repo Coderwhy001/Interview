@@ -4,7 +4,7 @@ function quickSort(arr) {
   let right = []
   let pivot = arr[0]
   for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > pivot) right.push(arr[i])
+    if (arr[i] >= pivot) right.push(arr[i])
     if (arr[i] < pivot) left.push(arr[i])
   }
   return [...(quickSort(left)), pivot, ...(quickSort(right))]
