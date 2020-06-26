@@ -10,10 +10,10 @@
 <body>
   <script>
     let xhr = new XMLHttpRequest();
-    document.cookie = 'name=Horace';
-    xhr.withCredentials = true; //前端设置是否带 cookie
+    document.cookie = 'name=Xiao';
+    xhr.withCredentials = true;
     xhr.open('PUT', 'http://localhost:4000/getData', true);
-    xhr.setRequestHeader('name', 'Horace');
+    // xhr.setRequestHeader('name', 'Xiao');
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4) {
         if (xhr.status >= 200 && xhr.status < 300 || xhr.status === 304) {
@@ -22,8 +22,10 @@
         }
       }
     }
-    xhr.send();
+    xhr.send()
   </script>
 </body>
 
 </html>
+
+
