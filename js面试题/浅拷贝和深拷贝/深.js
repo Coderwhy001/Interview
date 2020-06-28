@@ -1,15 +1,22 @@
 // JSON.parse(JSON.stringify)
 
-const deepClone = (target) => {
-  if (typeof target === 'object' && target !== null) {
-    const cloneTarget = Array.isArray(target) ? []: {};
-    for (let prop in target) {
-      if (target.hasOwnProperty(prop)) {
-          cloneTarget[prop] = deepClone(target[prop]);
+function _deepClone(source) {
+  let target;
+  if (typeof source === 'object') {
+    target = Array.isArray(source) ? [] : {}
+    for (let key in source) {
+      if (source.hasOwnProperty(key)) {
+        if (typeof source[key] !== 'object') {
+          target[key] = source[key]
+        } else {
+          target[key] = _deepClone(source[key])
+        }
       }
     }
-    return cloneTarget;
   } else {
-    return target;
+    target = source
   }
+  return target
 }
+
+// lodash.cloneDeep()实现深拷贝
