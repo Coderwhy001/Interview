@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function throttle(fn) {
+  let flag = true
+  return function() {
+    if (!flag) return;
+    flag = false;
+    setTimeout(() => {
+      fn.call(this, arguments)
+      flag = true
+    }, 1000)
+  }
+}
+function sayHi(e) {
+  console.log(123);
+}
+  </script>  
+  <button onclick="throttle(sayHi)">123</button>
+</body>
+</html>
