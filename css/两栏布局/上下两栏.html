@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    .out {
+      position: relative;
+      height: 100%;
+    }
+    .top {
+      height: 40px;
+      background-color: yellow;
+    }
+    .bottom {
+      position: absolute;
+      top: 40px;
+      bottom: 0;
+      background-color: skyblue;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="out">
+    <div class="top">上侧固定</div>
+    <div class="bottom">下侧自适应</div>
+  </div>
+</body>
+
+</html>
