@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="list">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    document.getElementById('list').addEventListener('click', function (e) {
+      if (e.target.nodeName === 'LI') {
+        console.log(e.target.innerHTML)
+      }
+    })
+  </script>
+</body>
+</html>
