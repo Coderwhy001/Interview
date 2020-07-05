@@ -5,3 +5,4 @@ Promise.all可以将多个Promise实例包装成一个新的Promise实例。 同
 顾名思义，Promse.race就是赛跑的意思，意思就是说，Promise.race([p1, p2, p3])里面哪个结果获得的快，就返回那个结果，不管结果本身是成功状态还是失败状态。
 # Promise和async await的区别
 1. 函数前面多了一个async关键字。 await只能用在async定义的函数内。 async函数会隐式的返回一个promise， 该promise的resolve值就是函数return的值
+promise中resolve的值其实就是promise这个函数的返回值
