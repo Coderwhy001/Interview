@@ -1,7 +1,7 @@
 const sleep = (time) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log(resolve(1))
+      resolve(1)
     }, time)
   })
 }
