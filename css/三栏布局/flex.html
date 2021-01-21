@@ -5,32 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    html, body {
+        html, body {
       margin: 0;
       padding: 0;
       height: 100%;
     }
-    .left {
-      float: left;
+    .root {
+      display: flex;
       height: 100%;
-      background-color: #969696;
-      width: 100px;
+    }
+    .left {
+        background: red;
+        width: 100px;
+        height: 100%;
+      }
+    .mid {
+      background: skyblue;
+      flex: 1;
+      height: 100%;
     }
     .right {
-      float: right;
-      height: 100%;
       width: 100px;
-      background-color: #969696;
-    }
-    .main {
+      background: blue;
       height: 100%;
-      background: skyblue;
     }
   </style>
 </head>
 <body>
-  <div class="left">Left</div>
-  <div class="right">Right</div>
-  <div class="main">Main</div>
+  <div class="root">
+    <div class="left"></div>
+    <div class="mid"></div>
+    <div class="right"></div>
+  </div>
 </body>
 </html>

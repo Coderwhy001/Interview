@@ -8,3 +8,5 @@ function Child5() {
 }
 Child5.prototype = Object.create(Parent5.prototype)
 Child5.prototype.constructor = Child5
+
+console.log(Child5.play)
