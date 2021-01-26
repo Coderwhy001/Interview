@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax测试</title>
+</head>
+     
+<body>
+    
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+    var data = { name: 'BruceLee', password: '123456' };
+
+    $.ajax({
+        url: "http://localhost:3000",
+        type: "post",
+        data: JSON.stringify(data),
+        contentType: 'application/json;charset=utf-8',
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (msg) {
+            console.log(msg);
+        }
+    })
+    </script>
+</body>
+
+</html>

@@ -33,7 +33,7 @@ Cache-Control:max-age=3600
 3. no-cache：不使用本地缓存，跳过当前的强缓存，直接进入 协商缓存阶段
 4. no-store：直接禁止浏览器缓存，不进行任何形式的缓存，每次请求都要向服务器发送一个请求
 5. s-maxage：和 max-age 比较像，但是区别在于 s-maxage 是针对代理服务器的缓存时间
-当 Expires 和 Cache-Control 同时存在的时候，Cache-Control 会有效考虑
+当 Expires 和 Cache-Control 同时存在的时候，Cache-Control 会优先考虑
 ### 当缓存资源超时，强缓存失效的时候，就会进入到协商缓存阶段
 ## 协商缓存
 协商缓存就是由服务器来确定缓存资源是否可用， 所以客户端与服务器端要通过某种标识来进行通信， 从而让服务器判断请求资源是否可以缓存访问
