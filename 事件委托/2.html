@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: red;
+            padding: 2rem;
+        }
+        .section{
+            background-color: blue;
+            padding:2rem
+        }
+        span{
+            border:solid 1px white;
+            padding: 3rem;
+        }
+        p{
+            border:solid 1px deeppink;
+            padding:2rem
+        }
+        button{
+            color: black;
+            display: block
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="section">
+                <p onclick="pClickHandle(event)">
+                    <button onclick="btnClickHandle(event)">按钮</button>
+                </p>
+        </div>
+    </div>
+</body>
+<script>
+    function btnClickHandle(e){
+      // e.stopPropagation()
+        console.group('按钮被点击');
+        console.log(e.target);//触发谁（点击谁）目标就是谁
+        console.log(e.currentTarget);//绑定谁目标就是谁
+        console.groupEnd();
+    }
+    function pClickHandle(e){
+        console.group('p标签被点击了');
+        console.log(e.target);//点击谁目标就是谁
+        console.log(e.currentTarget);//绑定谁目标就是谁
+        console.groupEnd();
+    }
+</script>
+</html>

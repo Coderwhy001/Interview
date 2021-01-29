@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    li {
+      height: 20px;
+      background: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <ul id="main">
+  </ul>
+  <button onclick="addLi()" style="position: absolute; bottom: 0ex;">添加li</button>
+</body>
+<script>
+  function addLi() {
+    const node = document.createElement('LI')
+    const text = document.createTextNode('li')
+    node.appendChild(text)
+    document.getElementById('main').appendChild(node)
+  }
+  document.getElementById('main').addEventListener('mousemove', function (e) {
+    if (e.target.nodeName === 'LI') {
+      console.log(e.target)
+    }
+  })
+</script>
+</html>
+
+<!-- 具体需求：页面有一个<ul>，一个<button>，每点击一次按钮，就向<ul>中插入一个<li>，要求每监听到一个<li>的hover时，打印这个元素的位置，内容等等信息。 -->

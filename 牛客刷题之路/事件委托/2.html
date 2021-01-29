@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #a {
+            width: 500px;
+            height: 500px;
+            background: #ff0000
+        }
+        #b {
+            width: 200px;
+            height: 200px;
+            background: #00ff00
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <input id="b" type="text" name="bbbbb">
+    </div>
+    <hr>
+    <input type="text" name="ccc">
+</body>
+<script>
+    //函数
+    var fa = function () {
+        alert("a");
+    }
+
+    var fb = function (event) {
+        alert("b");
+    }
+
+    //A
+    var A = document.getElementById("a");
+    A.addEventListener("blur", fa, true);
+    //B
+    var B = document.getElementById("b");
+    B.addEventListener("blur", fb, false);
+
+</script>
+</html>
