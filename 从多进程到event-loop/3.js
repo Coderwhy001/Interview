@@ -10,6 +10,10 @@ setTimeout(() => {
 new Promise((resolve, reject) => {
   console.log(4)
   resolve(5)
+  setTimeout(() => {
+    console.log(8);
+
+  });
 }).then((data) => {
   console.log(data);
 })
@@ -20,4 +24,4 @@ setTimeout(() => {
 
 console.log(7);
 
-1475236
+

@@ -28,3 +28,29 @@ function Myis(x, y) {
 
 console.log(0 === -0)
 console.log(Object.is(0, -0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function instance (left, right) {
+  let proto = Object.getPrototypeOf(left);
+  while(true) {
+    if (proto === null) return false;
+    if (proto === right.prototype) return true;
+    proto = Object.getPrototypeOf(proto)
+  }
+}
