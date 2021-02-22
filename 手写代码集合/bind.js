@@ -1,5 +1,6 @@
 Function.prototype.myBind = function (context) {
   const self = this;
+  console.log(arguments)
   const args = [...arguments].slice(1)
   return function () {
     return self.call(context, ...args, ...arguments)
