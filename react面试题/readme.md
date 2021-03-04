@@ -51,3 +51,8 @@ React 内置了一些像 useState 这样的 Hook，你也可以创建你自己�
 - 只能在函数最外层调用 Hook，不要在循环、条件判断或者子函数中调用
 - 只能在 React 函数式组件或自定义 Hook 中使用 Hook，不要在其他 JavaScript 函数中调用
 之所以不要在循环当中去调用 Hook，这是因为 Hook 是通过数组实现的，每次 useState 都会改变下标，React 需要利用调用顺序来正确更新相应的状态，如果 useState 被包裹循环或条件语句中，那每就可能会引起调用顺序的错乱，从而造成意想不到的错误
+
+# context
+react的上下文提供两个组件，提供者provider和coustomer消费者，提供者作为父组件最外层的组件，包裹着其中的子元素，提供一层数据，类似于redux的全局数据流，这样子元素的子元素也能享用到父元素提供的数据
+# useEffect和useLayoutEffect
+若当前事件改变数据触发渲染，而这个改变的数据又是useEffect的依赖时，数据会先通过事件改变渲染，再执行useEffect中的代码。若是layoutEffect的话，会等待其中的代码执行完毕再更新视图

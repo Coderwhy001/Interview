@@ -11,3 +11,4 @@ POST
        - multipart/form-data
        - application/x-www-form-urlencoded
 ```
+发送预检请求方法是options， 包括必须的字段origin，和Access-Control-Request-Header，Access-Control-Request-Method，询问服务器origin中的域名是否在允许跨域的名单中，服务器跨域通过Access-Control-Allow-Origin设置跨域名单，一旦服务器通过了预检请求，会返回一个Access-Control-Max-Age，表示在这个时间内不需要再发预检请求了，和缓存一个道理。还会返回一个Access-Control-Allow-Credentials告诉浏览器是否要带cookie，浏览器也可以通过设置控制是否带cookie，如果浏览器预检请求带上了header，服务器也会回应我这边所允许的请求头。

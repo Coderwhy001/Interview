@@ -33,3 +33,11 @@ class Promise {
       this.callbacks.forEach(callback => this._handle(callback));
   }
 }
+
+let p = new Promise((resolve, reject) => {
+    console.log('done');
+    reject('5秒');
+  }).catch((tip) => {
+    console.log(tip);
+  })
+  .catch(()=> {console.log(123)})

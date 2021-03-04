@@ -7,10 +7,10 @@ class Promise {
       fn(this._resolve.bind(this));
   }
   then(onFulfilled) {
-      if (state === 'pending') {
+      if (this.state === 'pending') {
         this.callbacks.push(onFulfilled);
       } else {
-        onFulfilled(value)
+        onFulfilled(this.value)
       }
       return this; // 由于new promise，this指向promise本身，所以.then后return函数本身即可形成链式调用
   }
@@ -28,8 +28,7 @@ let p = new Promise(resolve => {
 }).then((tip) => {
   console.log(tip);
 })
-
-console.log(123)
+.then(console.log(123))
 
 
 

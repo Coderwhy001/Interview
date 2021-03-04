@@ -1,7 +1,9 @@
 function debounce(fn) {
   let timeout = null
   return function() {
-    clearTimeout(timeout)
+    if (timeout) {
+      clearTimeout(timeout)
+    }
     timeout = setTimeout(function() {
       fn.apply(this, arguments)
     }, 500)
