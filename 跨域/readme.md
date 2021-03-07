@@ -24,4 +24,3 @@ JSONP 本质是一个 Hack，利用 <script> 标签不受同源策略限制的�
 CORS 是目前主流的跨域解决方案，跨域资源共享(CORS) 是一种机制，它使用额外的 HTTP 头来告诉浏览器，让运行在一个 origin (domain) 上的Web 应用被准许访问来自不同源服务器上的指定的资源。
 CORS 需要浏览器和后端同时支持
 服务端设置 Access-Control-Allow-Origin 就可以开启 CORS
-

@@ -9,7 +9,7 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Headers', 'name') // 允许携带哪个头访问我
     res.setHeader('Access-Control-Allow-Methods', 'PUT') // 允许哪个方法访问我
     res.setHeader('Access-Control-Allow-Credentials', true) // 允许携带cookie
-    res.setHeader('Access-Control-Max-Age', 6) // 预检的存活时间
+    res.setHeader('Access-Control-Max-Age', 1) // 预检的存活时间
     res.setHeader('Access-Control-Expose-Headers', 'name') // 允许返回的头
     if (req.method === 'OPTIONS') {
       res.end() // OPTIONS请求不做任何处理
@@ -28,7 +28,7 @@ app.put('/getData', function (req, res) {
   res.end(JSON.stringify(data))
 })
 
-app.get('/getData', function (req, res) {
+app.post('/getData', function (req, res) {
   console.log(req.headers)
   res.end('he')
 })

@@ -1,4 +1,4 @@
-function sum (a) {
+function sum(a) {
   return function (b) {
     if (b !== undefined) {
       return sum(a+b)
@@ -8,5 +8,6 @@ function sum (a) {
   }
 }
 
-let ans = sum(1)(2)(3)()
+let ans = sum(1)(2)(3)(4)(5)()
+
 console.log(ans)
