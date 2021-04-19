@@ -6,8 +6,9 @@ function * withYield(a) {
   yield a * b;
 }
 
-const calcSix = withYield(6);
+const [a,b,c,d] = withYield(6);
 
-console.log(calcSix.next()) // 11
-console.log(calcSix.next()); // 36
-console.log(calcSix.next())
+// console.log(calcSix.next()) // 11
+// console.log(calcSix.next()); // 36
+// console.log(calcSix.next())
+console.log(a,b,c,d)

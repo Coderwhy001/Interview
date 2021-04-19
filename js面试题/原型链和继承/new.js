@@ -10,3 +10,4 @@ function Func1(name) {
 const obj1 = {}
 var f1 = mynew(Func1)
 console.log(f1 instanceof Func1)
+

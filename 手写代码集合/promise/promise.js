@@ -28,7 +28,9 @@ let p = new Promise(resolve => {
 }).then((tip) => {
   console.log(tip);
 })
-.then(console.log(123))
+.then((res) => {
+  console.log(res)
+})
 
 
 

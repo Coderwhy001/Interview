@@ -13,19 +13,21 @@
     .root {
       display: flex;
       height: 100%;
+      border: 1px solid red;
     }
     .left {
         background: red;
-        width: 100px;
+        flex-basis: 200px;
         height: 100%;
       }
     .mid {
       background: skyblue;
-      flex: 1;
+      /* flex-grow : 1; */
       height: 100%;
+      flex-grow: 1;
     }
     .right {
-      width: 100px;
+      flex-basis: 200px;
       background: blue;
       height: 100%;
     }

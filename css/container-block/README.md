@@ -3,7 +3,8 @@
 箱子：container-block
 
 ## 确定包含快
-- 如果 position 属性为 static 、 relative 或 sticky，包含块可能由它的最近的祖先块元素
+- 如果 position 属性为 static 、 relative ，包含块可能由它的最近的祖先块元素
+- 如果position属性为sticky，该值总是创建一个新的层叠上下文（stacking context）。注意，一个sticky元素会“固定”在离它最近的一个拥有“滚动机制”的祖先上（当该祖先的overflow 是 hidden, scroll, auto, 或 overlay时），即便这个祖先不是最近的真实可滚动祖先。
 - 如果 position 属性为 absolute ，包含块就是由它的最近的 position 的值不是 static 的祖先元素的内边距区的边缘组成。
 - 如果 position 属性是 fixed，包含块是 viewport
 - 如果 position 属性是 absolute 或 fixed，包含块也可能是由满足以下条件的最近祖先元素：

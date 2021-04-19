@@ -21,11 +21,20 @@ function myPromiseAll (promise) {
 }
 
 
-let p1 = Promise.resolve(1),
-    p2 = Promise.resolve(2),
-    p3 = Promise.resolve(3);
+let p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('成功了')
+  }, 2000);
+})
 
-myPromiseAll([p1, p2, p3]).then((res)=>{
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('success')    
+  }, 1000);
+})
+
+
+myPromiseAll([p1, p2]).then((res)=>{
     console.log(res, 'res')
 })
 .catch((err)=>{

@@ -41,12 +41,7 @@ console.log(Object.is(0, -0))
 
 
 
-
-
-
-
-
-function instance (left, right) {
+function instanceof1(left, right) {
   let proto = Object.getPrototypeOf(left);
   while(true) {
     if (proto === null) return false;

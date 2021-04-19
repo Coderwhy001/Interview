@@ -8,6 +8,5 @@ Function.prototype.myBind = function(objThis, ...params) { // 先传一部分参
   if (thisFn.prototype) {
     fToBind.prototype = Object.create(thisFn.prototype);
   }
-  
   return fToBind; 
 }
